@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Omar`s Info</title>
+        <style>
+            body{
+                background-color: #2E6E6E;
+            }
+            label,input{
+                margin-bottom: 10px;
+            }
+            fieldset{
+                margin: 40px;
+            }
+            
+             label{
+                 display: inline-block;
+                 width: 10%;
+                 position: relative;
+                 padding-right: 15px; 
+            }
+
+            .aligntext::after {
+                content: ":";
+                position: absolute;
+                right: 10px;
+            }
+            #personal_data{
+                width: auto;
+                height: auto;
+                background-color:#5F9EA0;
+
+            }
+            #student_name{
+                /* width: 100px;
+                height: 100px; */
+                background-color:#75c6c9;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            button{
+                background-color: #393939;
+                border-radius: 20%;
+                height: 40px;
+                width: 100px;
+                color: aliceblue;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <br><br>
+        <form action="" method="post">
+            <fieldset>
+                <legend id="personal_data">Personal Data</legend>
+                <fieldset style="background-color: #5F9EA0;">
+                
+                    <legend id="student_name">Omar Sayed</legend>
+                
+                    <label class="aligntext" for="first_name">First Name</label>
+                    <input type="text"><br>
+                    <label class="aligntext" for="last_name">Last Name</label>
+                    <input type="text">
+                </fieldset>
+                
+                    
+                <label class="aligntext" for="phone_number">Phone Number</label>
+                <input type="tel"><br>
+                <label class="aligntext" for="e-mail">E-mail</label>
+                <input type="email">
+                <br>
+                <label class="aligntext" for="Password">Password</label>
+                <input type="password"><br>
+                <label class="aligntext" for="rebeat-password">Rebeat Password</label>
+                <input type="password">
+                <br>
+                <label class="aligntext" for="Gender">Gender</label>
+                <input type="radio"><label for="male">Male</label>
+                <input type="radio"><label for="female">Female</label>
+                <br>
+                <label class="aligntext" for="education_level">Education</label>
+                <input type="checkbox"><label for="undergraduate">Study</label>
+                <input type="checkbox"><label for="graduate">Graduate</label>
+                <br>
+                <label class="aligntext" for="university">University</label>
+                <select>
+                    <option value="Alexandria University">AUC</option>
+                    <option value="Cairo university">AU</option>
+                    <option value="Mansoura University">CU</option>
+                </select>
+                <br>
+                <button>Submit</button>
+                
+            </fieldset>
+        </form>
+    </body>
+</html>
