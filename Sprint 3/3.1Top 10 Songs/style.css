@@ -2,6 +2,7 @@
 body{
     background-color: #532a7f;
     font-family: Archivo;
+    box-sizing: content-box;
 }
 .main_div{
     margin-top: 15%;
