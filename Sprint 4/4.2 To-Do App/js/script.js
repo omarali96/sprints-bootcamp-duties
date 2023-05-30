@@ -30,22 +30,7 @@ function create_task(){
 
 }
 
-//   <div class="task_items" id="todo_list">
-// <input type="checkbox">
-// <input type="text" value="Content goes here" disabled>
-// <select id="priority" aria-placeholder="Priority">
-// 	<option value="low" id="low">low</option>
-// 	<option value="medium" id="medium">medium</option>
-// 	<option value="high" id="high">high</option>
-// </select>
-// <div class="actions">
-// 	<button class="fa-solid fa-pen " id="edit"></button>
-// 	<button class="fa-regular fa-trash-can " id="remove"></button>
 
-// </div>
-
-
-// </div>
 
 
 function create_task_element(item) {
@@ -71,20 +56,32 @@ function create_task_element(item) {
 	input_element.setAttribute("disabled", "");
 
 	const priority_select_element = document.createElement("select");
-	priority_select_element.id = "priority";
-	priority_select_element.setAttribute("aria-placeholder", "Priority");
-	priority_select_element.value = item.priority;
+	priority_select_element.setAttribute("id", "priority");
 	priority_select_element.setAttribute("disabled", "");
-	//priority_select_element.addEventListener("change", change_priority);
+	priority_select_element.addEventListener("change", () => {
+		item.priority = priority_select_element.value;
+	});
+
+	
+	let options = ["low", "medium", "high"];
+	for(let i = 0; i < options.length; i++){
+		const option = document.createElement("option");
+		option.value = options[i];
+		option.text = options[i];
+		priority_select_element.appendChild(option);
+	}
+	
 
 	const actions_element = document.createElement("div");
 	actions_element.classList.add("actions");
 
 	const edit_btn_element = document.createElement("button");
 	edit_btn_element.classList.add('fa-solid', 'fa-pen');
+	edit_btn_element.setAttribute("id", "edit");
 
 	const remove_btn_element = document.createElement("button");
 	remove_btn_element.classList.add('fa-regular', 'fa-trash-can');
+	remove_btn_element.setAttribute("id", "remove");
 
 
 	actions_element.append(edit_btn_element);
@@ -92,6 +89,8 @@ function create_task_element(item) {
 
 	item_element.append(checkbox);
 	item_element.append(input_element);
+	item_element.append(priority_select_element);	
+	item_element.append(actions_element);
 
 	// Event
 	checkbox.addEventListener("change", () => {
