@@ -16,7 +16,7 @@ function create_task(){
 		completed: false
 	}
 	task_items.unshift(item);
-	const { item_element, input_element, priority_select_element } = create_task_element(item);
+	const { item_element, input_element,priority_select_element , actions_element } = create_task_element(item);
 
 	todo_list.prepend(item_element);
 
@@ -49,7 +49,6 @@ function create_task(){
 
 
 function create_task_element(item) {
-	console.log("create task element");
 	const item_element = document.createElement("div");
 	item_element.classList.add("task_items");
 
@@ -135,7 +134,7 @@ function create_task_element(item) {
 		save();
 	});
 	console.log("create task");
-	return {item_element, input_element, edit_btn_element, remove_btn_element}
+	return {item_element, input_element,  priority_select_element ,actions_element}
 
 }
 
