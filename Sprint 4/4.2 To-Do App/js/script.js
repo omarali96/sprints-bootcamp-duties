@@ -2,11 +2,17 @@
 // console.log("hello");
 const todo_list = document.getElementById("todo_list");
 const add_task = document.getElementById("add_task_btn");
+const sort_by_priority = document.getElementById("sort_btn"); // sort by priority
 
 // todo task list items
 let task_items=[];
 
 add_task.addEventListener('click',create_task);
+sort_by_priority.addEventListener('click',sort_tasks);
+
+ function sort_tasks() {
+	task_items.sort((a, b) => b.options.id - a.options.id);
+}
 
 function create_task(){
 	console.log("create task");
@@ -63,11 +69,11 @@ function create_task_element(item) {
 	});
 
 	
-	let options = ["low", "medium", "high"];
+	let options = [{id:0 ,priority:"low"},{id:1 ,priority:"medium"}, {id:2 ,priority:"high"}];
 	for(let i = 0; i < options.length; i++){
 		const option = document.createElement("option");
-		option.value = options[i];
-		option.text = options[i];
+		option.value = options[i].id;
+		option.text = options[i].priority;
 		priority_select_element.appendChild(option);
 	}
 	
@@ -136,6 +142,8 @@ function create_task_element(item) {
 	return {item_element, input_element,  priority_select_element ,actions_element}
 
 }
+
+
 
 
 
